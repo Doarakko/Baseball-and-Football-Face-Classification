@@ -22,12 +22,12 @@ def load_img_path_list(load_path):
     return person_list
 
 if __name__ == '__main__':
-    #player_list_file_path = "./data/baseball_player_list_age.txt"
-    player_list_file_path = "./data/football_player_list_age.txt"
+    #player_list_file_path = './data/baseball_player_list_age.txt'
+    player_list_file_path = './data/football_player_list_age.txt'
 
     player_list = load_person_list(player_list_file_path)
 
-    img_path_list_path = "./data/image_path_list.txt"
+    img_path_list_path = './data/image_path_list.txt'
     img_path_list = load_img_path_list(img_path_list_path)
 
     file_name_list = []
@@ -38,15 +38,15 @@ if __name__ == '__main__':
     
     for age in range(16,55): 
         #保存するパス
-        #save_path = "./data/baseball_player_list_age" + str(age) + ".txt"
-        save_path = "./data/football_player_list_age" + str(age) + ".txt"
+        #save_path = './data/baseball_player_list_age' + str(age) + '.txt'
+        save_path = './data/football_player_list_age' + str(age) + '.txt'
         with open(save_path, 'w') as f:
             for player in player_list:
                 if player[2] + player[1] in file_name_list:
                     if int(player[4]) == age:
-                        f.write(player[0] + "," + player[2] + player[1] + "," + player[4] + "\n")
+                        f.write(player[0] + ',' + player[2] + player[1] + ',' + player[4] + '\n')
         #デバック
-        print("[Save] {0}".format(save_path))
+        print('[Save] {0}'.format(save_path))
 
 
 
